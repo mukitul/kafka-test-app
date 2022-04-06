@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class ConsumerService {
-
-    @KafkaListener(topics = "test-app", groupId = "test-group")
+    @KafkaListener(topics = "AAAAAA", groupId = "AAAA")
     public void consumeMessage(ConsumerRecord<String, CommonKafkaDto> consumerRecord) {
         System.out.println("Received Message: " + consumerRecord);
         System.out.println("Consumed Value: " + consumerRecord.value());

@@ -46,7 +46,7 @@ public class KafkaProducerConfig {
 
     @Bean
     public NewTopic topic1() {
-        return new NewTopic("test-app", 1, (short) 1);
+        return new NewTopic(" ${listner.test.app.topic}", 1, (short) 1);
     }
 
     @Bean

@@ -22,7 +22,7 @@ public class KafkaConsumerConfig {
     @Value(value = "${kafka.bootstrap-servers}")
     private String bootstrapServers;
 
-    @Value("${kafka.consumer-group}")
+    @Value("${listner.test.app.groupId}")
     private String consumerGroup;
 
     @Bean
@@ -31,9 +31,9 @@ public class KafkaConsumerConfig {
         props.put(
                 ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 bootstrapServers);
-        props.put(
-                ConsumerConfig.GROUP_ID_CONFIG,
-                consumerGroup);
+//        props.put(
+//                ConsumerConfig.GROUP_ID_CONFIG,
+//                consumerGroup);
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(CommonKafkaDto.class));
     }
 
